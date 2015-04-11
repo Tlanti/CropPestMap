@@ -37,6 +37,7 @@ app.post('/save', function(req, res) {
 	var body = req.body;
 	
 	var form = new Form();
+	form.location		= body.location;
 	form.latitude 		= body.latitude;
 	form.longitude 		= body.longitude;
 	form.pestName 		= body.pestName;

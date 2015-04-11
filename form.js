@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var Form = mongoose.model('Form', {
+	location: String, 
 	latitude: Number,
 	longitude: Number,
 	pestName: String,

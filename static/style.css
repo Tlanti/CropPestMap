@@ -55,3 +55,7 @@ label.input #lat, label.input #long {
 	margin: 0px;
 	padding: 0px
 }
+
+.pest-img {
+	max-width: 400px;
+}

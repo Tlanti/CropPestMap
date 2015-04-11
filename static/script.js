@@ -13,8 +13,22 @@ $(function() {
 			
 			var latitude = position.coords.latitude;
 			var longitude = position.coords.longitude;
+			var latLong = new google.maps.LatLng(latitude,longitude);
+			var geocoder = new google.maps.Geocoder();
 			
-			map.panTo(new google.maps.LatLng(latitude,longitude));
+			geocoder.geocode({'latLng': latLong}, function(results, status) {
+			    if (status == google.maps.GeocoderStatus.OK) {
+			      if (results[1]) {
+			    	  $("[name='location']").val(results[1].address_components[1].long_name);
+			      } else {
+			        alert('No results found');
+			      }
+			    } else {
+			      alert('Geocoder failed due to: ' + status);
+			    }
+			});
+			
+			map.panTo(latLong);
 			
 			$latInput.val(latitude);
 			$longInput.val(longitude);
@@ -62,12 +76,14 @@ function listMapItems(map, infowindow) {
 				});
 				
 				var content = "<ul>" +
-								"<li>" + o.pestName + "</li>" + 
-								"<li>" + o.pestName + "</li>" + 
-								"<li>" + o.pestName + "</li>" + 
+								"<li>" + o.location + " (" + o.latitude + " / " + o.longitude + ")" + "</li>" + 
+								"<li>Pest/disease" + o.pestName + "</li>" + 
+								"<li>Disease started: " + o.pestStartDate + "</li>" + 
+								"<li>Area affected: " + (o.areaAffected ? o.areaAffected : "0") + "%</li>" + 
+								"<li>Pesticide application: <span style='white-space: pre;'>" + (o.pesticide ? o.pesticide : "-") + "</span></li>" + 
 							  "</ul>";
 				if (o.fileName) {
-					content += "<img src='http://localhost:3000/uploads/" + o.fileName + "'/>";
+					content += "<img src='http://localhost:3000/" + o.fileName + "' class='pest-img'/>";
 				}
 					
 				
