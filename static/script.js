@@ -49,13 +49,13 @@ $(function() {
 		if (currentMonth >= 5 && currentMonth <= 9) {
 			if (gdd >= 2250 && prec < 400) {
 				// There be bugs
-				$("#bug-report").html("There be bugs");
+				$("#bug-report").css("color", "red").html("There be bugs");
 			} else {
-				$("#bug-report").html("No bugs");
+				$("#bug-report").css("color", "green").html("No bugs");
 			}
 		} else {
 			// No bugs
-			$("#bug-report").html("No bugs");
+			$("#bug-report").css("color", "green").html("No bugs");
 		}
 		
 	});
