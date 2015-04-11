@@ -1,0 +1,113 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="./style.css" />
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+		
+		<script>
+			var marketData = {
+				title: "BUG",
+				latitude: 61.680791299999996,
+				longitude: 27.2608021
+			};
+			var map;
+			
+			$(function() {
+				initialize();
+				
+				var date = new Date();
+				$("[name='currentDate']").val(date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear());
+				if ("geolocation" in navigator) {
+					navigator.geolocation.getCurrentPosition(function(position) {
+						var latitude = position.coords.latitude;
+						var longitude = position.coords.longitude;
+						
+						map.panTo(new google.maps.LatLng(latitude,longitude));
+						
+						$("#lat").val(position.coords.latitude);
+						$("#long").val(position.coords.longitude);
+					});
+				}
+				
+				/*
+				$("form").submit(function(e) {
+					e.preventDefault();
+					$this = $(this);
+					
+					$.ajax({
+						url: "http://localhost/save",
+						data: $this.serialize(),
+						dataType: "POST",
+						success: function(data) {
+							
+						}
+					});
+				});
+				*/
+			});
+			
+			function initialize() {
+				var mapOptions = {
+					zoom: 8
+				};
+				map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+				
+				var marker = new google.maps.Marker({
+					position: new google.maps.LatLng(marketData.latitude, marketData.longitude),
+					map: map,
+					title: marketData.title
+				});
+			}
+		</script>
+	</head>
+	<body>
+		
+		<div id="page-container">
+			<label id="location"></label>
+			<div id="form-container">
+				<form action="http://localhost:3000/save" method="POST" enctype="multipart/form-data">
+					<label class="input">
+						<label>Latitude / longitude</label>
+						<input type="text" id="lat" name="latitude"> / <input type="text" id="long" name="longitude">
+					</label>
+					<label class="input">
+						<label>Name of the pest</label>
+						<input type="text" name="pestName">
+					</label>
+					
+					<label class="input">
+						<label>Date when the pest/ disease started</label>
+						<input type="text" name="pestStartDate">
+					</label>
+					
+					<label class="input">
+						<label>Current date (D.M.YYYY)</label>
+						<input type="text" name="currentDate">
+					</label>
+					
+					<label class="input">
+						<label>% of area currently affected</label>
+						<input type="text" name="areaAffected">
+					</label>
+					
+					<label class="input">
+						<label>Information about pesticide application</label>
+						<textarea name="pesticide" cols="40" rows="5"></textarea>
+					</label>
+					
+					<label class="input">
+						<label>Image</label>
+						<input type="file" name="image" accept="image/*" capture>
+					</label>
+					
+					<br/>
+					<input type="submit" value="Send"/>
+				</form>
+			</div>
+			<hr/>
+			<br/>
+<!-- 			<iframe src="https://www.google.com/maps/d/embed?mid=zh2Rn1Asl0Sw.k7cdtVE8NUvA" width="640" height="480"></iframe> -->
+			<div id="map-canvas"></div>
+		</div>
+	</body>
+</html>
