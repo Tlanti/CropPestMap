@@ -9,11 +9,8 @@ var multer  	= require("multer");
 var app = express();
 
 app.use(express.static('./static'));
-<<<<<<< HEAD
 app.use(express.static('./plugins'));
-=======
 app.use(express.static('./uploads'));
->>>>>>> origin/master
 app.use(parser.json());
 app.use(parser.urlencoded({extended: true}));
 app.use(multer({ 
@@ -32,6 +29,10 @@ app.get('/', function (req, res) {
 
 app.get('/information', function (req, res) {
 	res.sendFile(path.join(__dirname+'/information.html'));
+});
+
+app.get('/historymap', function (req, res) {
+	res.sendFile(path.join(__dirname+'/historymap.html'));
 });
 
 app.get("/listMap", function(req, res) {

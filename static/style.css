@@ -1,5 +1,5 @@
 #page-container {
-	width: 960px;
+	max-width: 960px;
 	margin: 0 auto;
 	margin-top: 80px;
 	background: #f2f2f2;
@@ -7,17 +7,26 @@
 	box-shadow: 0 0 10px rgb(200, 200, 200);
 }
 #form-container {
-	width: 600px;
+	width: 100%;
+	text-align: center;
 	margin: 0 auto;
 }
 
+#form-container .labels{
+	text-align: left;
+}
+
+#form-container .upload{
+	float: left;
+}
+
 #menu {
-	height: 30px;
+	min-height: 30px;
 	margin-bottom: 20px;
 }
 
 #menu > label {
-	width: 33%;
+	width: 49%;
 	display: inline-block;
 	text-align: center;
 	background: #ddd;
@@ -50,16 +59,33 @@ label.input #lat, label.input #long {
 	width: 164px;
 }
 
-#map-canvas, #information-canvas {
+#map-canvas {
 	height: 100%;
 	margin: 0px;
 	padding: 0px
 }
 
+@media (max-width: 991px) {
+	#menu{
+		text-align: center;
+	}
+  #menu > label {
+    width: 50%;
+  }
+}
+
 /*Information page*/
 
 .image {
-	width: 50%;
+	max-width: 400px;
+	width: 100%;
 	padding: 10px;
-	float:left;
+}
+
+.location-wrapper {
+	margin: 30px 0;
+}
+
+hr {
+	margin: 40px 0;
 }
