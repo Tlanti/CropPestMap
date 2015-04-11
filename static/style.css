@@ -1,12 +1,12 @@
 #page-container {
 	width: 960px;
 	margin: 0 auto;
-	margin-top: 20px;
+	margin-top: 80px;
 	background: #f2f2f2;
 	padding: 10px;
 	box-shadow: 0 0 10px rgb(200, 200, 200);
 }
-#form-container {
+.form-container {
 	width: 600px;
 	margin: 0 auto;
 }
@@ -17,7 +17,7 @@
 }
 
 #menu > label {
-	width: 33%;
+	width: 49%;
 	display: inline-block;
 	text-align: center;
 	background: #ddd;
@@ -45,17 +45,26 @@ label.input > label {
 label.input input[type="text"], label.input textarea {
 	width: 340px;
 }
+label.input input[type="file"] {
+	display: inline;
+}
 
 label.input #lat, label.input #long {
 	width: 164px;
 }
 
-#map-canvas {
+#map-canvas, #information-canvas {
 	height: 100%;
 	margin: 0px;
-	padding: 0px
+	padding: 0px;
 }
 
 .pest-img {
 	max-width: 400px;
+/*Information page*/
+
+.image {
+	width: 50%;
+	padding: 10px;
+	float:left;
 }

@@ -39,11 +39,23 @@ $(function() {
 		var tabId = this.getAttribute("data-tab");
 		$(".tab").hide();
 		$("#tab-" + tabId + ".tab").show();
+	});
+	
+	$("button#calc").click(function(e) {
+		var gdd = parseInt($("input[name='gdd']").val(), 10);
+		var prec = parseInt($("input[name='prec']").val(), 10);
+		var currentMonth = new Date().getMonth() + 1;
 		
-		if (tabId == 3) {
-			if ($("#tab-" + tabId + ".tab").find("iframe").length == 0) {
-				$("#tab-" + tabId + ".tab").append("<iframe src='https://www.google.com/maps/d/embed?mid=zh2Rn1Asl0Sw.k7cdtVE8NUvA' width='640' height='480'></iframe>");
+		if (currentMonth >= 5 && currentMonth <= 9) {
+			if (gdd >= 2250 && prec < 400) {
+				// There be bugs
+				$("#bug-report").html("There be bugs");
+			} else {
+				$("#bug-report").html("No bugs");
 			}
+		} else {
+			// No bugs
+			$("#bug-report").html("No bugs");
 		}
 		
 	});

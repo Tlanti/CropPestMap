@@ -1,78 +1,111 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<link rel="stylesheet" type="text/css" href="/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="/style.css" />
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script type="text/javascript" src="/script.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
-		
-		<script>
-			
-		</script>
+		<title>Crop Pest Map</title>
 	</head>
 	<body>
-		
-		<div id="page-container">
-			<div id="menu">
-				<label data-tab="1">Report pest / disease</label>
-				<label data-tab="2">Bug calculator</label>
-				<label data-tab="3">History data map</label>
-			</div>
-			<div id="form-container">
-				<div class="tab" id="tab-1">
-					<form action="http://localhost:3000/save" method="POST" enctype="multipart/form-data">
-					
+
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="#">Crop alert for farmers</a>
+	        </div>
+	        <div id="navbar" class="collapse navbar-collapse">
+	          <ul class="nav navbar-nav">
+	            <li class="active"><a href="/">Home</a></li>
+	            <li><a href="/information">Information</a></li>
+	          </ul>
+	        </div><!--/.nav-collapse -->
+	      </div>
+	    </nav>
+		<div id="page-container" class="container">
+			<div class="col-md-12">
+				<div id="menu">
+					<label data-tab="1">Report pest / disease</label>
+					<label data-tab="2">Bug calculator</label>
+				</div>
+				<div class="form-container">
+					<div class="tab" id="tab-1">
+						<form action="http://localhost:3000/save" method="POST" enctype="multipart/form-data">
+							<label class="input">
+								<label>Location</label>
+								<input type="text" name="location">
+							</label>
+						
+							<label class="input">
+								<label>Latitude / longitude</label>
+								<input type="text" id="lat" name="latitude"> / <input type="text" id="long" name="longitude">
+							</label>
+							
+							<label class="input">
+								<label>Current date (D.M.YYYY)</label>
+								<input type="text" name="currentDate">
+							</label>
+							
+							<label class="input">
+								<label>Name of the pest</label>
+								<input type="text" name="pestName">
+							</label>
+							
+							<label class="input">
+								<label>Date when the pest/ disease started</label>
+								<input type="text" name="pestStartDate">
+							</label>
+							
+							<label class="input">
+								<label>% of area currently affected</label>
+								<input type="text" name="areaAffected">
+							</label>
+							
+							<label class="input">
+								<label>Information about pesticide application</label>
+								<textarea name="pesticide" cols="40" rows="5"></textarea>
+							</label>
+							
+							<label class="input">
+								<label>Image of the pest/ disease</label>
+								<input type="file" name="image" accept="image/*" capture>
+							</label>
+							
+							<br/>
+							<input type="submit" value="Save" />
+						</form>
+					</div>
+					<div class="tab" id="tab-2">
 						<label class="input">
-							<label>Location</label>
-							<input type="text" name="location">
+							<label>Growing degree days (C)</label>
+							<input type="text" name="gdd">
 						</label>
 						
 						<label class="input">
-							<label>Latitude / longitude</label>
-							<input type="text" id="lat" name="latitude"> / <input type="text" id="long" name="longitude">
-						</label>
-						
-						<label class="input">
-							<label>Current date (D.M.YYYY)</label>
-							<input type="text" name="currentDate">
-						</label>
-						
-						<label class="input">
-							<label>Name of the pest</label>
-							<input type="text" name="pestName">
-						</label>
-						
-						<label class="input">
-							<label>Date when the pest/ disease started</label>
-							<input type="text" name="pestStartDate">
-						</label>
-						
-						<label class="input">
-							<label>% of area currently affected</label>
-							<input type="text" name="areaAffected">
-						</label>
-						
-						<label class="input">
-							<label>Information about pesticide application</label>
-							<textarea name="pesticide" cols="40" rows="5"></textarea>
-						</label>
-						
-						<label class="input">
-							<label>Image of the pest/ disease</label>
-							<input type="file" name="image" accept="image/*" capture>
+							<label>Precipitation (mm)</label>
+							<input type="text" name="prec">
 						</label>
 						
 						<br/>
-						<input type="submit" value="Save" />
-					</form>
+						<button id="calc">Calculate</button>
+						<br/>
+						<br/>
+						<label id="bug-report"></label>
+					</div>
 				</div>
-				<div class="tab" id="tab-2">TAB 2</div>
-				<div id="tab-3"></div>
+				
+				<hr/>
+				<br/>
+				<div id="map-canvas"></div>
 			</div>
-			
-			<hr/>
-			<br/>
-			<div id="map-canvas"></div>
 		</div>
+		<script type="text/javascript" src="/bootstrap.min.js"></script>
 	</body>
 </html>

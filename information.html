@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="/style.css" />
+		<script>
+			
+		</script>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Crop alert for farmers</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/information">Information</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+		<div id="page-container" class="container">
+			<div id="information-canvas">
+				<div class="col-md-12">
+					<div data-bind="foreach: information">
+							<div class="col-md-12">
+								<div class="col-md-4">
+									<h3>
+										<span data-bind="text: name"></span>
+									</h3>
+									<div data-bind="foreach: located">
+										<h5>
+											<span>Region: </span>
+											<span data-bind="text: name"></span>
+										</h5>
+										<h5>
+											<span>Location: </span>
+											<span data-bind="text: latitude"></span>
+											<span data-bind="text: longitude"></span>
+										</h5>
+									</div>
+								</div>
+								<div class="col-md-8">
+									<div data-bind="foreach: images">
+										<img data-bind="attr: {src: imageName}" class="image">
+									</div>
+								</div>
+								<hr/>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="/knockout-3.3.0.js"></script>
+		<script type="text/javascript" src="/bootstrap.min.js"></script>
+		<script type="text/javascript" src="/imagedata.js"></script>
+		<script type="text/javascript" src="/information.js"></script>
+	</body>
+</html>
