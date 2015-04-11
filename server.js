@@ -21,7 +21,7 @@ app.use(multer({
 		})
 );
 
-//mongoose.connect("mongodb://localhost/buddy");
+mongoose.connect("mongodb://localhost/buddy");
 
 app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname+'/index.html'));
