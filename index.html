@@ -2,62 +2,11 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="/style.css" />
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+		<script type="text/javascript" src="/script.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 		
 		<script>
-			var marketData = {
-				title: "BUG",
-				latitude: 61.680791299999996,
-				longitude: 27.2608021
-			};
-			var map;
 			
-			$(function() {
-				initialize();
-				
-				var date = new Date();
-				$("[name='currentDate']").val(date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear());
-				if ("geolocation" in navigator) {
-					navigator.geolocation.getCurrentPosition(function(position) {
-						var latitude = position.coords.latitude;
-						var longitude = position.coords.longitude;
-						
-						map.panTo(new google.maps.LatLng(latitude,longitude));
-						
-						$("#lat").val(position.coords.latitude);
-						$("#long").val(position.coords.longitude);
-					});
-				}
-				
-				/*
-				$("form").submit(function(e) {
-					e.preventDefault();
-					$this = $(this);
-					
-					$.ajax({
-						url: "http://localhost:3000/save",
-						data: $this.serialize(),
-						dataType: "POST",
-						success: function(data) {
-							
-						}
-					});
-				});
-				*/
-			});
-			
-			function initialize() {
-				var mapOptions = {
-					zoom: 8
-				};
-				map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-				
-				var marker = new google.maps.Marker({
-					position: new google.maps.LatLng(marketData.latitude, marketData.longitude),
-					map: map,
-					title: marketData.title
-				});
-			}
 		</script>
 	</head>
 	<body>
@@ -103,7 +52,7 @@
 					</label>
 					
 					<br/>
-					<input type="submit" value="Send"/>
+					<input type="submit" value="Save" />
 				</form>
 			</div>
 			<hr/>
