@@ -11,6 +11,26 @@
 	margin: 0 auto;
 }
 
+#menu {
+	height: 30px;
+	margin-bottom: 20px;
+}
+
+#menu > label {
+	width: 33%;
+	display: inline-block;
+	text-align: center;
+	background: #ddd;
+	line-height: 30px;
+}
+
+.tab {
+	display: none;
+}
+.tab:first-child {
+	display: block;
+}
+
 label.input {
 	display: block;
 	margin-top: 5px;

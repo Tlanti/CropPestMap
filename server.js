@@ -9,7 +9,11 @@ var multer  	= require("multer");
 var app = express();
 
 app.use(express.static('./static'));
+<<<<<<< HEAD
 app.use(express.static('./plugins'));
+=======
+app.use(express.static('./uploads'));
+>>>>>>> origin/master
 app.use(parser.json());
 app.use(parser.urlencoded({extended: true}));
 app.use(multer({ 
@@ -31,20 +35,24 @@ app.get('/information', function (req, res) {
 });
 
 app.get("/listMap", function(req, res) {
-	
+	Form.find(function (err, form) {
+	  if (err) return console.error(err);
+	  res.json(form);
+	});
 });
 
 app.post('/save', function(req, res) {
 	var body = req.body;
 	
 	var form = new Form();
-	form.latitude = body.latitude;
-	form.longitude = body.longitude;
-	form.pestName = body.pestName;
-	form.pestStartDate = body.pestStartDate;
-	form.currentDate = body.currentDate;
-	form.areaAffected = body.areaAffected;
-	form.pesticide = body.pesticide;
+	form.latitude 		= body.latitude;
+	form.longitude 		= body.longitude;
+	form.pestName 		= body.pestName;
+	form.pestStartDate 	= body.pestStartDate;
+	form.currentDate 	= body.currentDate;
+	form.areaAffected 	= body.areaAffected;
+	form.pesticide 		= body.pesticide;
+	form.fileName		= req.files.image.name;
 	
 	form.save(function(err, form) {
 		if(err) throw err;

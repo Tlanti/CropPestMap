@@ -7,7 +7,8 @@ var Form = mongoose.model('Form', {
 	pestStartDate: String,
 	currentDate: String,
 	areaAffected: Number,
-	pesticide: String
+	pesticide: String,
+	fileName: String
 });
 
 module.exports = Form;
