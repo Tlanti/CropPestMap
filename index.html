@@ -12,52 +12,60 @@
 	<body>
 		
 		<div id="page-container">
-			<label id="location"></label>
-			<div id="form-container">
-				<form action="http://localhost:3000/save" method="POST" enctype="multipart/form-data">
-					
-					<label class="input">
-						<label>Latitude / longitude</label>
-						<input type="text" id="lat" name="latitude"> / <input type="text" id="long" name="longitude">
-					</label>
-					
-					<label class="input">
-						<label>Current date (D.M.YYYY)</label>
-						<input type="text" name="currentDate">
-					</label>
-					
-					<label class="input">
-						<label>Name of the pest</label>
-						<input type="text" name="pestName">
-					</label>
-					
-					<label class="input">
-						<label>Date when the pest/ disease started</label>
-						<input type="text" name="pestStartDate">
-					</label>
-					
-					<label class="input">
-						<label>% of area currently affected</label>
-						<input type="text" name="areaAffected">
-					</label>
-					
-					<label class="input">
-						<label>Information about pesticide application</label>
-						<textarea name="pesticide" cols="40" rows="5"></textarea>
-					</label>
-					
-					<label class="input">
-						<label>Image of the pest/ disease</label>
-						<input type="file" name="image" accept="image/*" capture>
-					</label>
-					
-					<br/>
-					<input type="submit" value="Save" />
-				</form>
+			<div id="menu">
+				<label data-tab="1">Report pest / disease</label>
+				<label data-tab="2">Bug calculator</label>
+				<label data-tab="3">History data map</label>
 			</div>
+			<div id="form-container">
+				<div class="tab" id="tab-1">
+					<form action="http://localhost:3000/save" method="POST" enctype="multipart/form-data">
+						
+						<label class="input">
+							<label>Latitude / longitude</label>
+							<input type="text" id="lat" name="latitude"> / <input type="text" id="long" name="longitude">
+						</label>
+						
+						<label class="input">
+							<label>Current date (D.M.YYYY)</label>
+							<input type="text" name="currentDate">
+						</label>
+						
+						<label class="input">
+							<label>Name of the pest</label>
+							<input type="text" name="pestName">
+						</label>
+						
+						<label class="input">
+							<label>Date when the pest/ disease started</label>
+							<input type="text" name="pestStartDate">
+						</label>
+						
+						<label class="input">
+							<label>% of area currently affected</label>
+							<input type="text" name="areaAffected">
+						</label>
+						
+						<label class="input">
+							<label>Information about pesticide application</label>
+							<textarea name="pesticide" cols="40" rows="5"></textarea>
+						</label>
+						
+						<label class="input">
+							<label>Image of the pest/ disease</label>
+							<input type="file" name="image" accept="image/*" capture>
+						</label>
+						
+						<br/>
+						<input type="submit" value="Save" />
+					</form>
+				</div>
+				<div class="tab" id="tab-2">TAB 2</div>
+				<div id="tab-3"></div>
+			</div>
+			
 			<hr/>
 			<br/>
-<!-- 			<iframe src="https://www.google.com/maps/d/embed?mid=zh2Rn1Asl0Sw.k7cdtVE8NUvA" width="640" height="480"></iframe> -->
 			<div id="map-canvas"></div>
 		</div>
 	</body>
