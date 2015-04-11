@@ -21,6 +21,33 @@ var imagesData = [
       {
         "imageName":"http://ak.picdn.net/shutterstock/videos/1321132/preview/stock-footage-colorado-beetle-larva-leptinotarsa-decemlineata-agriculture-pest-timelapse.jpg"
       }
+    ],
+    "located":[
+      {
+        "name":"Southern Savonia",
+        "latitude":"62.0000",
+        "longitude":"27.5000"
+      },
+      {
+        "name":"Southern Karelia",
+        "latitude":"61.0000",
+        "longitude":"28.0000"
+      },
+      {
+        "name":"Central Finland",
+        "latitude":"62.5000",
+        "longitude":"25.5000"
+      },
+      {
+        "name":"Kymenlaakso",
+        "latitude":"60.5000",
+        "longitude":"27.0000"
+      },
+      {
+        "name":"Uusimaa",
+        "latitude":"60.2500",
+        "longitude":"24.5000"
+      }
     ]
   },
   {
@@ -32,6 +59,18 @@ var imagesData = [
       },
       {
         "imageName":"http://www.agroatlas.ru/content/pests/Globodera_rostochiensis/Globodera_rostochiensis.jpg"
+      }
+    ],
+    "located":[
+      {
+        "name":"Satakunta",
+        "latitude":"61.3333",
+        "longitude":"22.0000"
+      },
+      {
+        "name":"Häme Province",
+        "latitude":"61.0000",
+        "longitude":"24.4414"
       }
     ]
   },
@@ -68,6 +107,13 @@ var imagesData = [
       },
       {
         "imageName":"http://agrifish.dk/fileadmin/user_upload/NaturErhverv/Billeder/Skadegorer/Bakterier/Clavibacter%20mich%20sep.jpg"
+      }
+    ],
+    "located":[
+      {
+        "name":"Finland",
+        "latitude":"64.0000",
+        "longitude":"26.0000"
       }
     ]
   },
