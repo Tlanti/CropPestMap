@@ -11,24 +11,25 @@
 	<body>
 
 		<nav class="navbar navbar-inverse navbar-fixed-top">
-	      <div class="container">
-	        <div class="navbar-header">
-	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	            <span class="sr-only">Toggle navigation</span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	          </button>
-	          <a class="navbar-brand" href="#">Crop alert for farmers</a>
-	        </div>
-	        <div id="navbar" class="collapse navbar-collapse">
-	          <ul class="nav navbar-nav">
-	            <li class="active"><a href="/">Home</a></li>
-	            <li><a href="/information">Information</a></li>
-	          </ul>
-	        </div><!--/.nav-collapse -->
-	      </div>
-	    </nav>
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Crop alert for farmers</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/information">Information</a></li>
+            <li><a href="/historymap">History map</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
 		<div id="page-container" class="container">
 			<div class="col-md-12">
 				<div id="menu">
@@ -44,37 +45,37 @@
 							</label>
 						
 							<label class="input">
-								<label>Latitude / longitude</label>
+								<label class="labels">Latitude / longitude</label>
 								<input type="text" id="lat" name="latitude"> / <input type="text" id="long" name="longitude">
 							</label>
 							
 							<label class="input">
-								<label>Current date (D.M.YYYY)</label>
+								<label class="labels">Current date (D.M.YYYY)</label>
 								<input type="text" name="currentDate">
 							</label>
 							
 							<label class="input">
-								<label>Name of the pest</label>
+								<label class="labels">Name of the pest</label>
 								<input type="text" name="pestName">
 							</label>
 							
 							<label class="input">
-								<label>Date when the pest/ disease started</label>
+								<label class="labels">Date when the pest/ disease started</label>
 								<input type="text" name="pestStartDate">
 							</label>
 							
 							<label class="input">
-								<label>% of area currently affected</label>
+								<label class="labels">% of area currently affected</label>
 								<input type="text" name="areaAffected">
 							</label>
 							
 							<label class="input">
-								<label>Information about pesticide application</label>
+								<label class="labels">Information about pesticide application</label>
 								<textarea name="pesticide" cols="40" rows="5"></textarea>
 							</label>
 							
 							<label class="input">
-								<label>Image of the pest/ disease</label>
+								<label class="labels upload">Image of the pest/ disease</label>
 								<input type="file" name="image" accept="image/*" capture>
 							</label>
 							

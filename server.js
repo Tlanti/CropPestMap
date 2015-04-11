@@ -31,6 +31,10 @@ app.get('/information', function (req, res) {
 	res.sendFile(path.join(__dirname+'/information.html'));
 });
 
+app.get('/historymap', function (req, res) {
+	res.sendFile(path.join(__dirname+'/historymap.html'));
+});
+
 app.get("/listMap", function(req, res) {
 	Form.find(function (err, form) {
 	  if (err) return console.error(err);
