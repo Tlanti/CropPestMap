@@ -17,7 +17,7 @@
 }
 
 .form-container .upload{
-	float: left;
+	width: 340px;
 }
 
 #menu {
@@ -70,6 +70,7 @@ label.input #lat, label.input #long {
 
 .pest-img {
 	max-width: 400px;
+}
 
 @media (max-width: 991px) {
 	#menu{
