@@ -6,17 +6,17 @@
 	padding: 10px;
 	box-shadow: 0 0 10px rgb(200, 200, 200);
 }
-#form-container {
+.form-container {
 	width: 100%;
 	text-align: center;
 	margin: 0 auto;
 }
 
-#form-container .labels{
+.form-container .labels{
 	text-align: left;
 }
 
-#form-container .upload{
+.form-container .upload{
 	float: left;
 }
 
