@@ -9,6 +9,7 @@ var multer  	= require("multer");
 var app = express();
 
 app.use(express.static('./static'));
+app.use(express.static('./plugins'));
 app.use(parser.json());
 app.use(parser.urlencoded({extended: true}));
 app.use(multer({ 
@@ -19,10 +20,14 @@ app.use(multer({
 		})
 );
 
-mongoose.connect("mongodb://localhost/buddy");
+//mongoose.connect("mongodb://localhost/buddy");
 
 app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname+'/index.html'));
+});
+
+app.get('/information', function (req, res) {
+	res.sendFile(path.join(__dirname+'/information.html'));
 });
 
 app.get("/listMap", function(req, res) {
