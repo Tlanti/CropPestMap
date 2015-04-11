@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="./style.css" />
+		<link rel="stylesheet" type="text/css" href="/style.css" />
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 		
@@ -35,7 +35,7 @@
 					$this = $(this);
 					
 					$.ajax({
-						url: "http://localhost/save",
+						url: "http://localhost:3000/save",
 						data: $this.serialize(),
 						dataType: "POST",
 						success: function(data) {
@@ -66,10 +66,17 @@
 			<label id="location"></label>
 			<div id="form-container">
 				<form action="http://localhost:3000/save" method="POST" enctype="multipart/form-data">
+					
 					<label class="input">
 						<label>Latitude / longitude</label>
 						<input type="text" id="lat" name="latitude"> / <input type="text" id="long" name="longitude">
 					</label>
+					
+					<label class="input">
+						<label>Current date (D.M.YYYY)</label>
+						<input type="text" name="currentDate">
+					</label>
+					
 					<label class="input">
 						<label>Name of the pest</label>
 						<input type="text" name="pestName">
@@ -78,11 +85,6 @@
 					<label class="input">
 						<label>Date when the pest/ disease started</label>
 						<input type="text" name="pestStartDate">
-					</label>
-					
-					<label class="input">
-						<label>Current date (D.M.YYYY)</label>
-						<input type="text" name="currentDate">
 					</label>
 					
 					<label class="input">
@@ -96,7 +98,7 @@
 					</label>
 					
 					<label class="input">
-						<label>Image</label>
+						<label>Image of the pest/ disease</label>
 						<input type="file" name="image" accept="image/*" capture>
 					</label>
 					

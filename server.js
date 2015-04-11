@@ -8,6 +8,7 @@ var multer  	= require("multer");
 
 var app = express();
 
+app.use(express.static('./static'));
 app.use(parser.json());
 app.use(parser.urlencoded({extended: true}));
 app.use(multer({ 
@@ -18,18 +19,15 @@ app.use(multer({
 		})
 );
 
-//mongoose.connect("mongodb://localhost/buddy");
+mongoose.connect("mongodb://localhost/buddy");
 
 app.get('/', function (req, res) {
 	res.sendFile(path.join(__dirname+'/index.html'));
 });
 
-//app.use(multer({
-//	dest: './uploads/',
-//	rename: function (fieldname, filename) {
-//		return "pest_" + Date.now();
-//	}
-//}));
+app.get("/listMap", function(req, res) {
+	
+});
 
 app.post('/save', function(req, res) {
 	var body = req.body;
@@ -43,11 +41,9 @@ app.post('/save', function(req, res) {
 	form.areaAffected = body.areaAffected;
 	form.pesticide = body.pesticide;
 	
-	console.log(body.latitude);
-	
-	form.save(function(err, form){
+	form.save(function(err, form) {
 		if(err) throw err;
-		res.render('index');
+		res.redirect("/");
 	});
 });
 
