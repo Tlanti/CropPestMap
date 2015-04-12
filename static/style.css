@@ -63,7 +63,7 @@ label.input #lat, label.input #long {
 }
 
 #map-canvas {
-	height: 100%;
+	height: 700px;
 	margin: 0px;
 	padding: 0px;
 }
