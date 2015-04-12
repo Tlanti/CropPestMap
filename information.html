@@ -2,9 +2,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="/bootstrap.min.css" />
 		<link rel="stylesheet" type="text/css" href="/style.css" />
-		<script>
-			
-		</script>
+		<title>Crop Pest Map</title>
 	</head>
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -33,34 +31,34 @@
 					<h1>Known pest and diseases</h1>
 					<hr/>
 					<div data-bind="foreach: information">
-							<div class="col-md-12">
-								<div class="col-md-4">
-									<h3>
-										<span data-bind="text: name"></span>
-									</h3>
-									<h4>Known locations in Finland:</h4>
-									<div data-bind="foreach: located">
-										<div class="location-wrapper">
-											<h5>
-												<span data-bind="text: name"></span>
-											</h5>
-											<h5>
-												<span>Location: </span>
-												<span data-bind="text: latitude"></span>
-												<span data-bind="text: longitude"></span>
-											</h5>
-										</div>
+						<div class="col-md-12">
+							<div class="col-md-4">
+								<h3>
+									<span data-bind="text: name"></span>
+								</h3>
+								<h4>Known locations in Finland:</h4>
+								<div data-bind="foreach: located">
+									<div class="location-wrapper">
+										<h5>
+											<span data-bind="text: name"></span>
+										</h5>
+										<h5>
+											<span>Location: </span>
+											<span data-bind="text: latitude"></span>
+											<span data-bind="text: longitude"></span>
+										</h5>
 									</div>
-								</div>
-								<div data-bind="foreach: images">
-									<div class="col-md-4">
-										<img data-bind="attr: {src: imageName}" class="image">
-									</div>
-								</div>
-								<div class="col-md-12">
-									<hr/>
 								</div>
 							</div>
+							<div data-bind="foreach: images">
+								<div class="col-md-4">
+									<img data-bind="attr: {src: imageName}" class="image">
+								</div>
+							</div>
+							<div class="col-md-12">
+								<hr/>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

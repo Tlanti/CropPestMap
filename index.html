@@ -7,6 +7,12 @@
 		<script type="text/javascript" src="/script.js"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 		<title>Crop Pest Map</title>
+		<script>
+			$(function () {
+				initializeMap();
+				initForm();
+			});
+		</script>
 	</head>
 	<body>
 
@@ -34,7 +40,7 @@
 			<div class="col-md-12">
 				<div id="menu">
 					<label data-tab="1">Report pest / disease</label>
-					<label data-tab="2">Bug calculator</label>
+					<label data-tab="2">Calliptamus italicus</label>
 				</div>
 				<div class="form-container">
 					<div class="tab" id="tab-1">
@@ -56,7 +62,7 @@
 							
 							<label class="input">
 								<label class="labels">Name of the pest</label>
-								<input type="text" name="pestName">
+								<input type="text" value="Colorado Beetle" name="pestName">
 							</label>
 							
 							<label class="input">
@@ -81,16 +87,20 @@
 							
 							<br/>
 							<input type="submit" value="Save" />
+							
+							<br/>
+						<br/>
+						<a href="/listing">Map not loading? View as a list.</a>
 						</form>
 					</div>
 					<div class="tab" id="tab-2">
 						<label class="input">
-							<label>Growing degree days (C)</label>
+							<label class="labels">Growing degree days (C)</label>
 							<input type="text" name="gdd">
 						</label>
 						
 						<label class="input">
-							<label>Precipitation (mm)</label>
+							<label class="labels">Precipitation (mm)</label>
 							<input type="text" name="prec">
 						</label>
 						
@@ -104,6 +114,7 @@
 				
 				<hr/>
 				<br/>
+				
 				<div id="map-canvas"></div>
 			</div>
 		</div>

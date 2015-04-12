@@ -76,9 +76,10 @@ label.input #lat, label.input #long {
 	#menu{
 		text-align: center;
 	}
-  #menu > label {
-    width: 50%;
-  }
+	#menu > label {
+		width: 50%;
+		cursor: pointer;
+	}
 }
 
 /*Information page*/
